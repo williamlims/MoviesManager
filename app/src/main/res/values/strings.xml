@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">MoviesManager</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_movie">Add Movie</string>
+    <string name="assistido">Assistido</string>
+    <string name="nome">Nome do filme</string>
+    <string name="ano_de_lan_amento">Ano de Lançamento</string>
+    <string name="produtora">Produtora</string>
+    <string name="salvar_filme">Salvar filme</string>
+    <string name="duracao">Duração (Min)</string>
+    <string name="nota_0_10">Nota [0-10]</string>
+    <string name="g_nero">Gênero</string>
+    <string-array name="gender_array">
+        <item>Ação e aventura</item>
+        <item>Drama</item>
+        <item>Comédia romántica</item>
+        <item>Ficção científica</item>
+        <item>Terror</item>
+        <item>Suspense</item>
+        <item>Musical</item>
+        <item>Policial</item>
+    </string-array>
 </resources>
