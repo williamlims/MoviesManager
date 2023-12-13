@@ -71,14 +71,13 @@ class MovieFragment : Fragment() {
             saveBt.setOnClickListener {
                 setFragmentResult(MOVIE_FRAGMENT_REQUEST_KEY, Bundle().apply {
                     putParcelable(
-                        EXTRA_MOVIE, Movie(
-                            receivedMovie?.id ?: 0,
+                        EXTRA_MOVIE, Movie(receivedMovie?.id ?: System.currentTimeMillis(),
                             nameEt.text.toString(),
                             producerEt.text.toString(),
                             durationEt.text.toString(),
                             if (watchedCb.isChecked) WATCHED_TRUE else WATCHED_FALSE,
                             noteEt.text.toString().toInt(),
-                            genderSP.selectedItem.toString().toInt()
+                            genderSP.selectedItemPosition
                         )
                     )
                 })

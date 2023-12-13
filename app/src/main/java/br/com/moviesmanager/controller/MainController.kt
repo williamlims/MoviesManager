@@ -28,6 +28,7 @@ class MainController(private val mainFragment: MainFragment) {
         CoroutineScope(Dispatchers.IO).launch {
             val movies = movieDaoImpl.selectMovies()
             //mainFragment.sele(movies)
+            movies
         }
     }
 

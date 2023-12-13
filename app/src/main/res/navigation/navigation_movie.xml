@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="br.com.moviesmanager.view.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        android:label="Filmes"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
@@ -17,16 +17,16 @@
     <fragment
         android:id="@+id/movieFragment"
         android:name="br.com.moviesmanager.view.MovieFragment"
-        android:label="fragment_movie"
+        android:label="Novo filme"
         tools:layout="@layout/fragment_movie">
         <argument
             android:name="movie"
-            app:argType="br.com.moviesmanager.model.entity.Movie"
             android:defaultValue="@null"
+            app:argType="br.com.moviesmanager.model.entity.Movie"
             app:nullable="true" />
         <argument
             android:name="editMovie"
-            app:argType="boolean"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            app:argType="boolean" />
     </fragment>
 </navigation>
