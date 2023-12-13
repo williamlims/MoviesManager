@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#29282B">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,7 +21,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/nome"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"/>
 
         <EditText
             android:id="@+id/nameEt"
@@ -31,6 +34,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:autofillHints="name"
             android:inputType="text"
+            android:background="#98949C"
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             tools:ignore="LabelFor" />
 
         <TextView
@@ -40,7 +47,9 @@
             app:layout_constraintTop_toBottomOf="@id/nameEt"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/ano_de_lan_amento"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"/>
 
         <EditText
             android:id="@+id/releasedEt"
@@ -51,7 +60,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:autofillHints="name"
             android:inputType="date"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:background="#98949C"
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
 
         <TextView
             android:id="@+id/producerTV"
@@ -60,7 +73,9 @@
             app:layout_constraintTop_toBottomOf="@id/releasedEt"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/produtora"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"/>
 
         <EditText
             android:id="@+id/producerEt"
@@ -71,7 +86,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:autofillHints="name"
             android:inputType="text"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:background="#98949C"
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
 
         <TextView
             android:id="@+id/durationTV"
@@ -80,7 +99,9 @@
             app:layout_constraintTop_toBottomOf="@id/producerEt"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/duracao"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"/>
 
         <EditText
             android:id="@+id/durationEt"
@@ -91,7 +112,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:autofillHints="name"
             android:inputType="number"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:background="#98949C"
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
         <CheckBox
             android:id="@+id/watchedCb"
@@ -101,6 +126,8 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"
             app:layout_constraintTop_toBottomOf="@id/durationEt" />
 
         <TextView
@@ -110,7 +137,9 @@
             app:layout_constraintTop_toBottomOf="@id/watchedCb"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/nota_0_10"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"/>
 
         <EditText
             android:id="@+id/noteEt"
@@ -121,7 +150,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:autofillHints="name"
             android:inputType="number"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:background="#98949C"
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
         <TextView
             android:id="@+id/genderTV"
@@ -130,7 +163,9 @@
             app:layout_constraintTop_toBottomOf="@id/noteEt"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/g_nero"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#FFFFFF"/>
 
         <Spinner
             android:id="@+id/genderSP"
@@ -139,7 +174,11 @@
             app:layout_constraintTop_toBottomOf="@id/genderTV"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:entries="@array/gender_array"/>
+            android:entries="@array/gender_array"
+            android:background="#98949C"
+            android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
 
         <Button
             android:id="@+id/saveBt"
@@ -150,7 +189,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="#57545B"
             android:textSize="25sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintTop_toBottomOf="@id/genderSP" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
