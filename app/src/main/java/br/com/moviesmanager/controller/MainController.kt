@@ -37,5 +37,11 @@ class MainController(private val mainFragment: MainFragment) {
         }
     }
 
+    fun deleteMovie(movie: Movie) {
+        CoroutineScope(Dispatchers.IO).launch {
+            movieDaoImpl.deleteMovie(movie)
+        }
+    }
+
 
 }

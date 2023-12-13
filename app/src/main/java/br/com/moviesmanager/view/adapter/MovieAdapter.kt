@@ -2,13 +2,16 @@ package br.com.moviesmanager.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.CheckBox
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.moviesmanager.R
 import br.com.moviesmanager.model.entity.Movie
 import br.com.moviesmanager.databinding.TileMovieBinding
+import br.com.moviesmanager.model.entity.Movie.Companion.WATCHED_TRUE
 
 class MovieAdapter(
     private val movieList: List<Movie>,
@@ -16,8 +19,13 @@ class MovieAdapter(
 ) : RecyclerView.Adapter<MovieAdapter.TaskTileViewHolder>() {
     inner class TaskTileViewHolder(tileTaskBinding: TileMovieBinding) :
         RecyclerView.ViewHolder(tileTaskBinding.root) {
-        val nameTv: TextView = tileTaskBinding.nameTv
-        val doneCb: CheckBox = tileTaskBinding.doneCb
+        val nameTv: TextView = tileTaskBinding.nameTV
+        val releasedTV: TextView = tileTaskBinding.releasedTV
+        val producerTV: TextView = tileTaskBinding.producerTV
+        val durationTV: TextView = tileTaskBinding.durationTV
+        val watchedCb: CheckBox = tileTaskBinding.watchedCb
+        val noteTV: TextView = tileTaskBinding.noteTV
+        val genderSP: Spinner = tileTaskBinding.genderSP
 
         init {
             tileTaskBinding.apply {
@@ -40,9 +48,9 @@ class MovieAdapter(
                         onMovieClickListener.onMovieClick(adapterPosition)
                     }
                 }
-                doneCb.run {
+                watchedCb.run {
                     setOnClickListener {
-                        onMovieClickListener.onDoneCheckBoxClick(adapterPosition, isChecked)
+                        onMovieClickListener.onWatchedCheckBoxClick(adapterPosition, isChecked)
                     }
                 }
             }
@@ -55,13 +63,27 @@ class MovieAdapter(
 
 
     override fun onBindViewHolder(holder: TaskTileViewHolder, position: Int) {
-        movieList[position].let { task ->
+        movieList[position].let { movie ->
             with(holder) {
-                nameTv.text = task.name
-                doneCb.isChecked = task.done == MOVIE_DONE_TRUE
+                nameTv.text = movie.name
+                releasedTV.text = movie.released
+                producerTV.text = movie.producer
+                durationTV.text = movie.duration.toString()
+                watchedCb.isChecked = movie.watched == WATCHED_TRUE
+                noteTV.text = movie.note.toString()
+                ArrayAdapter.createFromResource(
+                    genderSP.context,
+                    R.array.gender_array,
+                    android.R.layout.simple_spinner_item
+                ).also { adapter ->
+                    // Specify the layout to use when the list of choices appears
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
+                    // Apply the adapter to the spinner
+                    genderSP.adapter = adapter
+                }
             }
         }
     }
 
-    override fun getItemCount() = taskList.size
+    override fun getItemCount() = movieList.size
 }

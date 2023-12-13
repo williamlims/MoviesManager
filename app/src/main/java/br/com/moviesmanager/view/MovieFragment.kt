@@ -18,6 +18,8 @@ import br.com.moviesmanager.databinding.FragmentMovieBinding
 import br.com.moviesmanager.model.entity.Movie
 import br.com.moviesmanager.model.entity.Movie.Companion.WATCHED_FALSE
 import br.com.moviesmanager.model.entity.Movie.Companion.WATCHED_TRUE
+import br.com.moviesmanager.view.MainFragment.Companion.EXTRA_MOVIE
+import br.com.moviesmanager.view.MainFragment.Companion.MOVIE_FRAGMENT_REQUEST_KEY
 
 class MovieFragment : Fragment() {
     private lateinit var ftb: FragmentMovieBinding
@@ -70,9 +72,13 @@ class MovieFragment : Fragment() {
                 setFragmentResult(MOVIE_FRAGMENT_REQUEST_KEY, Bundle().apply {
                     putParcelable(
                         EXTRA_MOVIE, Movie(
-                            receivedMovie?.time ?: System.currentTimeMillis(),
+                            receivedMovie?.id ?: 0,
                             nameEt.text.toString(),
-                            if (watchedCb.isChecked) WATCHED_TRUE else WATCHED_FALSE
+                            producerEt.text.toString(),
+                            durationEt.text.toString(),
+                            if (watchedCb.isChecked) WATCHED_TRUE else WATCHED_FALSE,
+                            noteEt.text.toString().toInt(),
+                            genderSP.selectedItem.toString().toInt()
                         )
                     )
                 })

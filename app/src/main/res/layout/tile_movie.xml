@@ -56,19 +56,11 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/genderTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/noteTV"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="30sp" />
-
     <Spinner
         android:id="@+id/genderSP"
         android:layout_width="match_parent"
         android:layout_height="38sp"
-        app:layout_constraintTop_toBottomOf="@id/genderTV"
+        app:layout_constraintTop_toBottomOf="@id/noteTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:entries="@array/gender_array"/>
