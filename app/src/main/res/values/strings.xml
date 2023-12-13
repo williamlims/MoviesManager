@@ -10,6 +10,9 @@
     <string name="duracao">Duração (Min)</string>
     <string name="nota_0_10">Nota [0-10]</string>
     <string name="g_nero">Gênero</string>
+    <string name="editar_filme">Editar filme</string>
+    <string name="remover_filme">Remover filme</string>
+    <string name="movie_details">Detalhes do Filme</string>
     <string-array name="gender_array">
         <item>Ação e aventura</item>
         <item>Drama</item>
